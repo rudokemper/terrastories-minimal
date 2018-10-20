@@ -86,6 +86,9 @@ $ docker-compose build
 > tileserver uses an image; skipping
 ```
 
+Set title, extent, zoom, map boundaries, bookmarks, and any other customizations in `\map\index.html`.
+
+
 ## Build The Map Tiles
 The tilebuilder service will need to be run once to populate the `mbtiles`
 shared volume that the tileserver will read from. The tilebuilder does not need

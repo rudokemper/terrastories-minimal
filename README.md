@@ -16,8 +16,8 @@
 ## Running the application: quickstart guide
 1. Install and start Docker. 
 2. Download the `terrastories-minimal` code and put it in a directory (like `D:\terrastories-minimal\`)
-3. Put the shapefiles in `tilebuilder\shapefiles\` and the Mapbox style.json file in `\tileserver\data\styles\`. See [Creating and updating the Tileserver Map](#creating-and-updating-the-tileserver-map) for more information on this process.
-4. In a terminal application like PowerShell for Windows, navigate to that directory. 
+3. Put the shapefiles in `\tilebuilder\shapefiles\` and the Mapbox style.json file in `\tileserver\data\styles\`. See [Creating and updating the Tileserver Map](#creating-and-updating-the-tileserver-map) for more information on this process.
+4. In a terminal application (in Windows, this is PowerShell), navigate to that directory. 
 5. Run `docker-compose build` to build the container for the application.
 6. Run `docker-compose run tilebuilder` to generate the MBtiles from the shapefiles.
 7. Run `docker-compose up -d nginx` to start the application.

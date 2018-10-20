@@ -1,4 +1,4 @@
-**Terrastories minimal** is a stripped down version of the [**Terrastories**](http://terrastories.io) application which runs just the tilebuilder and tileserver, in order to render an offline map using MBtiles styled in Mapbox Studio. 
+**Terrastories minimal** is a stripped down version of the [**Terrastories**](http://terrastories.io) application, which runs just the tilebuilder and tileserver to render an offline map using MBtiles styled in Mapbox Studio. 
 
 ## Table of Contents
 0. [Running the application: quickstart guide](#running-the-application-quickstart-guide)
@@ -18,7 +18,7 @@
 2. Download the `terrastories-minimal` code and put it in a directory (like `D:\terrastories-minimal\`)
 3. Put the shapefiles in `\tilebuilder\shapefiles\` and the Mapbox style.json file in `\tileserver\data\styles\`. See [Creating and updating the Tileserver Map](#creating-and-updating-the-tileserver-map) for more information on this process.
 4. In a terminal application (in Windows, this is PowerShell), navigate to that directory. 
-5. Run `docker-compose build` to build the container for the application.
+5. Run `docker-compose build` to build the Docker container for the application.
 6. Run `docker-compose run tilebuilder` to generate the MBtiles from the shapefiles.
 7. Run `docker-compose up -d nginx` to start the application.
 8. Now, the map should be runnning in `http://localhost:3000/map/`

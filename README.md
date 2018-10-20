@@ -20,9 +20,9 @@ Terrastories is designed to render a basemap as designed and styled in Mapbox St
 
 2) download the style.json from Mapbox Studio via the Mapbox Studio styles interface [here](https://www.mapbox.com/studio/styles/)
 
-3) copy both the shapefiles and style.json into the respective directories on Terrastories.
+3) copy both the shapefiles and style.json into the respective directories on Terrastories. Do not rename shapefiles or feature names in Mapbox Studio throughout this process -- the naming conventions must be consistent (aside from the additional -###### hash added by Mapbox Studio; more on that later).
+
 Note: the user must provide their own shapefile content. It is not possible to use any of the standard OpenStreetMap (OSM) content used in the standard styles made available by Mapbox, unless the user first downloads that OSM content and converts it to shapefile first.
-Note: do not rename either shapefiles or the feature names in Mapbox Studio.
 
 ### Step 2: adding new or updating shapefiles to Terrastories
 
@@ -39,6 +39,7 @@ To add or update the map style,
 1) download the style.json from Mapbox Studio via the Mapbox Studio styles interface [here](https://www.mapbox.com/studio/styles/)
 
 2) at this point, we have to edit the style.json a little. When you upload shapefiles to Mapbox Studio, it actually adds on an additional six alphanumeric characters preceded by a dash (-), which is called "hash." For example, a shapefile called "South_America" might be called "South_America-a2027z" in Mapbox Studio. And then in style.json file, all of the names for this layer will have "–a2027z" added to it. This is a problem because there is a discrepancy between the names of the shapefile you added in Step 2, which does no include "-a2027z." So, you have to go into the json and look for "source-layer": "South_America-a2027z", and take out the "-a2027z", and do the same for each layer.
+
 In the future, we will create an automatic script that will take care of this process.
 
 3) copy the style into your `styles` directory (tileserver\data\styles])

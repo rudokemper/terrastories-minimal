@@ -17,11 +17,12 @@
 1. Install and start Docker. 
 2. Download the `terrastories-minimal` code and put it in a directory (like `D:\terrastories-minimal\`)
 3. Put the shapefiles in `\tilebuilder\shapefiles\` and the Mapbox style.json file in `\tileserver\data\styles\`. See [Creating and updating the Tileserver Map](#creating-and-updating-the-tileserver-map) for more information on this process.
-4. In a terminal application (in Windows, this is PowerShell), navigate to that directory. 
-5. Run `docker-compose build` to build the Docker container for the application.
-6. Run `docker-compose run tilebuilder` to generate the MBtiles from the shapefiles.
-7. Run `docker-compose up -d nginx` to start the application.
-8. Now, the map should be runnning in `http://localhost:3000/map/`
+4. Set title, extent, zoom, map boundaries, bookmarks, and any other customizations in `\map\index.html`.
+5. In a terminal application (in Windows, this is PowerShell), navigate to that directory. 
+6. Run `docker-compose build` to build the Docker container for the application.
+7. Run `docker-compose run tilebuilder` to generate the MBtiles from the shapefiles.
+8. Run `docker-compose up -d nginx` to start the application.
+9. Now, the map should be runnning in `http://localhost:3000/map/`
 Note: Once you've built the application and created the tiles, you only ever have to run `docker-compose up -d nginx` for it to work. You can also run `docker-compose down` to close the application.
 
 ## Creating and updating the Tileserver Map

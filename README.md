@@ -1,9 +1,9 @@
 **Terrastories minimal** is a stripped down version of the [**Terrastories**](http://terrastories.io) application which runs just the tilebuilder and tileserver, in order to render an offline map using MBtiles styled in Mapbox Studio. 
 
 ## Table of Contents
-1. [Creating and updating the Tileserver Map](#updating-the-tileserver-map)
+1. [Creating and updating the Tileserver Map](#creating-and-updating-the-tileserver-map)
 
-2. [Docker prerequisites](#prerequisites)
+2. [Docker prerequisites](#docker-prerequisites)
 
 3. [Setup](#setup)
 

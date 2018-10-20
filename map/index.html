@@ -1,0 +1,207 @@
+<html><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ancestral Lands of the Matawai Maroons along the Saramacca River in Suriname</title>
+  <link rel="stylesheet" type="text/css" href="http://localhost:3000/mapbox-gl.css">
+  <script src="http://localhost:3000/mapbox-gl.js"></script>
+  <link rel="stylesheet" type="text/css" href="http://localhost:3000/mapbox.css">
+  <script src="http://localhost:3000/mapbox.js"></script>
+  <script src="http://localhost:3000/leaflet-hash.js"></script>
+  <style>
+    body { margin:0; padding:0; }
+    #map { position:absolute; top:0; bottom:0; width:100%; }
+  </style>
+</head>
+<body>
+		<style>
+			#fit {
+				display: block;
+				position: relative;
+				margin: 0px auto;
+				width: 10%;
+				height: 40px;
+				padding: 10px;
+				border: none;
+				border-radius: 3px;
+				font-size: 12px;
+				font-weight: bold;
+				text-align: center;
+				color: #fff;
+				background: #8856a7;
+			}
+			
+
+
+			.select {
+				position: relative;
+				display: block;
+				margin-bottom: 15px;
+				width: 100%;
+				font-size: 12px;
+				font-weight: bold;
+				text-align: center;
+			}    
+			
+			.select select {
+				font-family: 'Arial';
+				font-weight: bold;
+				display: inline-block;
+				width: 22%;
+				cursor: pointer;
+				padding: 6px 6px;
+				outline: 0;
+				border: 0px solid #000000;
+				border-radius: 3px;
+				background: #8856a7;
+				color: #fff;
+				appearance: none;
+				-webkit-appearance: none;
+				-moz-appearance: none;
+			}
+
+			@media only screen and (max-device-width: 480px) {
+				.select select { width: 40%; }
+			}	
+			
+			.select select::-ms-expand {
+						display: none;
+					}
+					
+			.select select:hover,
+			.select select:focus {
+				color: #ffffff;
+				background: #8856a7;
+			}
+			
+			.select select:disabled {
+				opacity: 0.3;
+				pointer-events: none;
+			}
+
+			.mapboxgl-ctrl-logo{
+				display: none !important;
+			}			
+		
+		</style>
+		
+  <div id="map"></div>
+		<div class="select">
+		<form>
+			<select id='bookmarks' onchange="myFunction()">
+				<option>--Bookmarks--</option>
+				<option value='2'>Saramacca watershed</option>
+				<option value='7'>Kwakugron</option>
+				<option value='4'>New Jacobkondre</option>
+				<option value='5'>Pakapaka & Makajapingo</option>
+				<option value='3'>Upper Saramacca</option>
+				<option value='6'>Tukumutu & Mama Saamaka</option>
+				<option value='1'>Suriname</option>
+
+				</select>
+			</form>
+			</div>  
+ <script>
+
+		var bounds = [
+			[-60.80409032, 0.3332811], //southwest
+			[-52.41053563, 6.90258397]  // Northeast coordinates
+		]; 
+ 
+		var map = new mapboxgl.Map({
+			container: 'map', // container id
+			style: 'http://localhost:3000/styles/basic/style.json',
+			center: [-55.63, 4.78], // starting position [lng, lat]
+			zoom: 7.6, // starting zoom
+			maxBounds: bounds // Sets bounds as max
+		});
+
+		map.addControl(new mapboxgl.NavigationControl());
+		
+		map.addControl(new mapboxgl.ScaleControl({
+			maxWidth: 150,
+			unit: 'metric'
+		}));
+
+		document.getElementById('fit').addEventListener('click', function() {
+			map.fitBounds([[
+				-55.612561,
+				4.794422
+			], [
+				-55.242137,
+				5.0006286
+			]]);
+		});
+		
+	  	function myFunction() {
+			bookmarkx = document.forms[0].bookmarks.value;
+			if (bookmarkx == 1) {
+				map.fitBounds([[
+					-57.983804,
+					2.058316
+				], [
+					-53.803880,
+					6.194095
+				]]);			
+			}
+			if (bookmarkx == 2) {
+				map.fitBounds([[
+					-56.248132,
+					3.831376
+				], [
+					-55.242137,
+					5.865508
+				]]);			
+			}
+			if (bookmarkx == 3) {
+				map.fitBounds([[
+					-55.851440,
+					4.320703
+				], [
+					-55.648209,
+					4.408103
+				]]);			
+			}
+			if (bookmarkx == 4) {
+				map.fitBounds([[
+					-55.612561,
+					4.794422
+				], [
+					-55.44046,
+					4.990305
+				]]);			
+			}
+			if (bookmarkx == 5) {
+				map.fitBounds([[
+					-55.682257,
+					4.619457
+				], [
+					-55.542183,
+					4.725208
+				]]);			
+			}
+			
+			if (bookmarkx == 6) {
+				map.fitBounds([[
+					-56.146315,
+					4.060469
+				], [
+					-55.825143,
+					4.271508
+				]]);			
+			}
+			if (bookmarkx == 7) {
+				map.fitBounds([[
+					-55.445573,
+					5.187774
+				], [
+					-55.278037,
+					5.319755
+				]]);			
+			}
+			
+			else {
+			}
+			
+		}
+</script>
+</body></html>

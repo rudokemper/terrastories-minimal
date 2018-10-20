@@ -1,6 +1,7 @@
 version: "3.2"
 services:
   nginx:
+    restart: always
     depends_on:
       - tileserver
     environment:
@@ -32,6 +33,7 @@ services:
         target: /data/shapefiles
 
   tileserver:
+    restart: always
     image: klokantech/tileserver-gl
     networks:
       - tilenet

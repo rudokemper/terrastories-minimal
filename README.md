@@ -1,6 +1,8 @@
 **Terrastories minimal** is a stripped down version of the [**Terrastories**](http://terrastories.io) application which runs just the tilebuilder and tileserver, in order to render an offline map using MBtiles styled in Mapbox Studio. 
 
 ## Table of Contents
+0. [Running the application: quickstart guide](#running-the-application-quickstart-guide)
+
 1. [Creating and updating the Tileserver Map](#creating-and-updating-the-tileserver-map)
 
 2. [Docker prerequisites](#docker-prerequisites)
@@ -11,12 +13,23 @@
 
 5. [Running the server](#make-it-go)
 
+## Running the application: quickstart guide
+1. Install and start Docker. 
+2. Download the `terrastories-minimal` code and put it in a directory (like `D:\terrastories-minimal\`)
+3. Put the shapefiles in `tilebuilder\shapefiles\` and the Mapbox style.json file in `\tileserver\data\styles\`. See [Creating and updating the Tileserver Map](#creating-and-updating-the-tileserver-map) for more information on this process.
+4. In a terminal application like PowerShell for Windows, navigate to that directory. 
+5. Run `docker-compose build` to build the container for the application.
+6. Run `docker-compose run tilebuilder` to generate the MBtiles from the shapefiles.
+7. Run `docker-compose up -d nginx` to start the application.
+8. Now, the map should be runnning in `http://localhost:3000/map/`
+Note: Once you've built the application and created the tiles, you only ever have to run `docker-compose up -d nginx` for it to work. You can also run `docker-compose down` to close the application.
+
 ## Creating and updating the Tileserver Map
 ### Step 1: preparing content in Mapbox Studio
 
 Terrastories is designed to render a basemap as designed and styled in Mapbox Studio. There are two different components: shapefiles (the spatial data without any styling properties) and styles (the look and feel of the map, as designed in Mapbox Studio, exported in json format). The basic workflow is as follows:
 
-1) upload their shapefile content to [Mapbox Studio](https://www.mapbox.com/mapbox-studio/), and use the Studio interface to lay out the map. You have to have a Mapbox account to use Mapbox Studio (creating and designing maps using Mapbox Studio is free up to certain file size limitations.) To learn how to use Mapbox Studio, you can refer to the manuals and tutorials made available by Mapbox [here](https://www.mapbox.com/help/studio-manual-tutorials/) or other resources on the web.
+1) upload the shapefile content to [Mapbox Studio](https://www.mapbox.com/mapbox-studio/), and use the Studio interface to lay out the map. You have to have a Mapbox account to use Mapbox Studio (creating and designing maps using Mapbox Studio is free up to certain file size limitations). To learn how to use Mapbox Studio, you can refer to the manuals and tutorials made available by Mapbox [here](https://www.mapbox.com/help/studio-manual-tutorials/) or other resources on the web.
 
 2) download the style.json from Mapbox Studio via the Mapbox Studio styles interface [here](https://www.mapbox.com/studio/styles/)
 
@@ -52,6 +65,7 @@ Install docker. On linux, you may have to install docker-compose separately.
  - https://docs.docker.com/compose/install/
 
 On Windows, all terminal docker commands need to be run using Windows PowerShell, not Command Prompt.
+PowerShell comes bundled with Windows.
 
 ## Setup
 In your terminal program, navigate to the directory where you put the `terrastories-minimal` 

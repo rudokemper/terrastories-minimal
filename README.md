@@ -51,9 +51,13 @@ Install docker. On linux, you may have to install docker-compose separately.
  - https://docs.docker.com/install/
  - https://docs.docker.com/compose/install/
 
-On Windows, all docker commands need to be run using Windows PowerShell, not Command Prompt.
+On Windows, all terminal docker commands need to be run using Windows PowerShell, not Command Prompt.
 
 ## Setup
+In your terminal program, navigate to the directory where you put the `terrastories-minimal` 
+files, after you've downloaded it. You always have to be in this directory to run any of the docker
+commands.
+
 Docker will automatically build images as needed when running `docker-compose up`,
 but to confirm everything builds correctly, run the following and check that the
 output ends with something like this.

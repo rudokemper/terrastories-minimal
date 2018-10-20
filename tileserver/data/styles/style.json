@@ -67,7 +67,7 @@
             "id": "background",
             "type": "background",
             "layout": {},
-            "paint": {"background-color": "hsl(0, 0%, 56%)"}
+            "paint": {"background-color": "hsl(244, 48%, 55%)"}
         },
         {
             "id": "south america polygon",

@@ -1,4 +1,4 @@
-**Terrastories minimal** is a stripped-down version of the [**Terrastories**](http://terrastories.io) application, which runs just the tilebuilder and tileserver to render an offline map accessed in a browser, using shapefiles styled in Mapbox Studio. 
+**Terrastories minimal** is a stripped down version of the [**Terrastories**](http://terrastories.io) application, which runs just the tilebuilder and tileserver to render an offline map accessed in a browser, using shapefiles styled in Mapbox Studio. 
 
 ## Table of Contents
 0. [Running the application: quickstart guide](#running-the-application-quickstart-guide)
